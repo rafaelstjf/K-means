@@ -12,7 +12,7 @@ ofstream BDCENTROS;
 ofstream BDCENTROSI;
 void AbrirBD(char nomeBD[100])
 {
-    BD.open(nomeBD,ios::out);//chama função membro open
+    BD.open(nomeBD,ios::out);//chama funÃ§Ã£o membro open
 }
 void VoltaInicioBD()
 {
@@ -129,7 +129,7 @@ void EscolheCentro(int qntcentros, int numlinhas, int numcolunas, double* Matriz
 {
     int c[qntcentros], centroValido=0;
     int verifcent[qntcentros]; //Recebe o centro atual para comparar com os outros centros
-    srand(time(NULL)); // Randomiza o primeiro valor de rand(), que antes sempre começava com o mesmo numero int.
+    srand(time(NULL)); // Randomiza o primeiro valor de rand(), que antes sempre comeÃ§ava com o mesmo numero int.
 
     ///cout << "Grupos: \t" ;
     for(int i=0; i<qntcentros; i++)
@@ -167,9 +167,9 @@ void CalculaNovosCentros (int qntcentros, double *Matriz, int numlinhas, int num
     double soma [qntcentros][numcolunas]; ///Faz a soma dos atributos de cada grupo
     int stop=0;
     double antigocentro[qntcentros*numcolunas];
-    int contGrupo[qntcentros]; /// Faz a contagem do total de amostras que contém em cada grupo
-    //int centroIgual=0; /// Contagem para saber se os novos centros serão iguais aos anteriormente obtidos.
-    //int AmostrasPorGrupo=0; /// Contagem para saber se não existe amostras em um determinado grupo e não mudar seu centro para 0
+    int contGrupo[qntcentros]; /// Faz a contagem do total de amostras que contÃ©m em cada grupo
+    //int centroIgual=0; /// Contagem para saber se os novos centros serÃ£o iguais aos anteriormente obtidos.
+    //int AmostrasPorGrupo=0; /// Contagem para saber se nÃ£o existe amostras em um determinado grupo e nÃ£o mudar seu centro para 0
     ///string trash; /// Usado pra teste, para tirar o loop infinito.
 
     for(int g=0; g<numcolunas; g++)//Inicializa a matriz com 0
@@ -232,7 +232,7 @@ void ImprimeMatrizFinal (int numlinhas, int numcolunas, double *Matriz, int *Gru
 
 void ImprimeMatrizFinalArquivo (int numlinhas, int numcolunas, double *Matriz, int *Grupos, char nomeBD[], int qntcentros, double* centros)
 {
-    BDSAIDA.open("RESULTADO.txt"); // o arquivo que será criado;
+    BDSAIDA.open("RESULTADO.txt"); // o arquivo que serÃ¡ criado;
     for (int i=0; i<numlinhas; i++)
     {
         for (int j=0; j<numcolunas; j++)
@@ -302,7 +302,7 @@ void NormalizaLinearmente(double *Matriz,int numcolunas,int numlinhas)
     }
 
     /**FAZ UM TXT COM A BASE DE DADOS NORMALIZADA**/
-    BDSAIDA.open("Normalizada.txt"); // o arquivo que será criado;
+    BDSAIDA.open("Normalizada.txt"); // o arquivo que serÃ¡ criado;
     for (int i=0; i<numlinhas; i++)
     {
         for (int j=0; j<numcolunas; j++)
@@ -340,7 +340,7 @@ int main()
 
     numerolinhas = CalcNumLinhas();//atribui os valores
     numerocolunas = CalcNumColunas();//atribui os valores
-    double *Matriz = new double[numerolinhas*(numerocolunas)];//aloca dinamicamente um vetor 2D para armazenar a matriz
+    double *Matriz = new double[numerolinhas*(numerocolunas)];//aloca dinamicamente um vetor para armazenar a matriz
     cout << numerolinhas <<" linhas" <<endl;
     cout << numerocolunas <<" colunas" <<endl<<endl;
     cout << "Digite o numero de grupos" << endl;
@@ -352,7 +352,7 @@ int main()
         cin >> k;
     }
     tempo=clock();//inicia a contagem do tempo de compilacao do algoritmo k-means
-    double *Distancias = new double [numerolinhas*k]; //Aloca dinamicamente uma matriz contendo a distancia em relação a cada k
+    double *Distancias = new double [numerolinhas*k]; //Aloca dinamicamente uma matriz contendo a distancia em relaÃ§Ã£o a cada k
     double *centros= new double[k*numerocolunas];//cria vetor unidimensional para salvar os centros
     int *Grupos = new int [numerolinhas];
     CriaMatriz(numerolinhas, numerocolunas, Matriz);
