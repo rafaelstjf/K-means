@@ -1,0 +1,36 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+makefile
+main
+conversor
+# Algorithm generated files #
+#############################
+*.csv
+last_seed.txt
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+.vscode
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+# specific to CodeBlocks IDE #
+##############################
+*.cbp
+*.layout
+*.depend
+
+# generated directories #
+#########################
+bin/
+obj/
+Models/
